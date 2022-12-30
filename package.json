@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "node-mysql": "^0.4.2",
+    "orientjs": "^3.0.11",
+    "underscore": "^1.13.6"
+  },
+  "name": "server_side_javascript",
+  "version": "1.0.0",
+  "description": "server sied javascript tutorials",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
