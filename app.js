@@ -1,11 +1,12 @@
 var express = require('express');
 var app = express();  //application을 return
+app.locals.pretty = true;
 app.set('view engine', 'jade');
 app.set('views', './views');
 app.use(express.static('public'));
 
 app.get('/template', function(req, res) {
-    res.render('temp');
+    res.render('temp', {time:Date(), _title:'Jade'});
 })
 
 app.get('/', function(req, res) {  //홈페이지 접속을 했을 때
