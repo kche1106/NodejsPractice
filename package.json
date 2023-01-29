@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "express": "^4.18.2",
+    "jade": "^1.11.0",
     "node-mysql": "^0.4.2",
     "orientjs": "^3.0.11",
     "underscore": "^1.13.6"

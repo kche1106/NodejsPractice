@@ -1,6 +1,12 @@
 var express = require('express');
 var app = express();  //application을 return
+app.set('view engine', 'jade');
+app.set('views', './views');
 app.use(express.static('public'));
+
+app.get('/template', function(req, res) {
+    res.render('temp');
+})
 
 app.get('/', function(req, res) {  //홈페이지 접속을 했을 때
     res.send('Hello home page');
