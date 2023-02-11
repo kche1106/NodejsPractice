@@ -5,6 +5,21 @@ app.set('view engine', 'jade');
 app.set('views', './views');
 app.use(express.static('public'));
 
+app.get('/topic', function(req, res) {
+    var topics = [
+        'Javascript is...',
+        'Node is...',
+        'Express is...'
+    ];
+    var output = `
+    <a href="/topic?id=0">JavaScript</a><br>
+    <a href="/topic?id=1">Nodejs</a><br>
+    <a href="/topic?id=2">Express</a><br><br>
+    ${topics[req.query.id]}
+    `
+    res.send(output);
+})
+
 app.get('/template', function(req, res) {
     res.render('temp', {time:Date(), _title:'Jade'});
 })
