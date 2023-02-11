@@ -5,7 +5,22 @@ app.set('view engine', 'jade');
 app.set('views', './views');
 app.use(express.static('public'));
 
-app.get('/topic', function(req, res) {
+// app.get('/topic', function(req, res) {
+//     var topics = [
+//         'Javascript is...',
+//         'Node is...',
+//         'Express is...'
+//     ];
+//     var output = `
+//     <a href="/topic?id=0">JavaScript</a><br>
+//     <a href="/topic?id=1">Nodejs</a><br>
+//     <a href="/topic?id=2">Express</a><br><br>
+//     ${topics[req.query.id]}
+//     `
+//     res.send(output);
+// })
+
+app.get('/topic/:id', function(req, res) {
     var topics = [
         'Javascript is...',
         'Node is...',
@@ -15,9 +30,13 @@ app.get('/topic', function(req, res) {
     <a href="/topic?id=0">JavaScript</a><br>
     <a href="/topic?id=1">Nodejs</a><br>
     <a href="/topic?id=2">Express</a><br><br>
-    ${topics[req.query.id]}
+    ${topics[req.params.id]}
     `
     res.send(output);
+})
+
+app.get('/topic/:id/:mode', function(req, res) {
+    res.send(req.params.id+','+req.params.mode);
 })
 
 app.get('/template', function(req, res) {
